@@ -33,6 +33,9 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- D3-->
+    <script src="vendors/js/d3.min.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -48,7 +51,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
@@ -63,7 +66,7 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
@@ -75,12 +78,12 @@
                 <h1 id="homeHeading">Your Favorite Source of Free Bootstrap Themes</h1>
                 <hr>
                 <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
             </div>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+  <!--   <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -92,7 +95,7 @@
             </div>
         </div>
     </section>
-
+ -->
     <section id="services">
         <div class="container">
             <div class="row">
@@ -103,136 +106,17 @@
             </div>
         </div>
         <div class="table-responsive">
-          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..." title="Type in a name">
-            <table class="table table-striped" data-toggle="table" id="tabelaDados">
+          <input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search for names..." title="Type in a name">
+            <table class="table table-striped" data-toggle="table" id="tabelaDados" onload="fillTable()">
               <thead>
-                <tr>
-                  <th onclick="sortTable(0)">#</th>
-                  <th onclick="sortTable(1)">Header</th>
-                  <th onclick="sortTable(2)">Header</th>
-                  <th onclick="sortTable(3)">Header</th>
-                  <th onclick="sortTable(4)">Header</th>
-                </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
               </tbody>
             </table>
           </div>
     </section>
 
-    <section class="no-padding" id="portfolio">
+    <!-- <section class="no-padding" id="portfolio">
         <div class="container-fluid">
             <div class="row no-gutter popup-gallery">
                 <div class="col-lg-4 col-sm-6">
@@ -327,18 +211,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <aside class="bg-dark">
+  <!--   <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Free Download at Start Bootstrap!</h2>
                 <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>
             </div>
         </div>
-    </aside>
+    </aside> -->
 
-    <section id="contact">
+    <!-- <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -356,10 +240,12 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- jQuery -->
     <script src="vendors/js/jquery.min.js"></script>
+
+    <script src="assets/js/funcoes.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendors/js/bootstrap.min.js"></script>
@@ -371,8 +257,6 @@
 
     <!-- Theme JavaScript -->
     <script src="assets/js/creative.min.js"></script>
-
-    <script src="assets/js/ordenatabela.js"></script>
 
 </body>
 

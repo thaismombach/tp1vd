@@ -10,7 +10,7 @@ $(document).ready(function fillTable() {
   
     var tableHeader = Object.keys(data[0]);  
 
-    var tableBody = _tableBody = data.map(function(d) {
+    tableBody = _tableBody = data.map(function(d) {
       return Object.keys(d).map(function(k){
         return d[k]; 
       });
@@ -73,7 +73,10 @@ function sortTable() {
 }
 
 function updateTableBody(table, p){
-  table = table.slice(page*quantElem, (page+1)*quantElem); 
+  console.log(table.length + " " + quantElem)
+  if(table.length > quantElem)
+    table = table.slice(p*quantElem, (p+1)*quantElem);
+
   var tBody = d3.select("tbody");
   var rows = tBody.selectAll('tr')
         .data(table);
@@ -144,14 +147,13 @@ function searchTable() {
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
   _tableBody = []; 
-
   for (i = 0; i < tableBody.length; i++) {
     var property = Object.values(tableBody[i])
     for (var j = 0; j < property.length; j++){
-      elem = property[j];
+      elem = property[j].toUpperCase();
       if (elem) {
         if (elem.indexOf(filter) > -1) {
-          console.log(tableBody[i])
+          //console.log(filter + " " + elem);
           _tableBody.push(tableBody[i])
           break;
         } 

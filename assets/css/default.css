@@ -17,12 +17,10 @@
 
 #tabelaDados {
   border-collapse: collapse;
-  /*width: 100%;*/
-  width: 800px;
-  /*display: block;*/
+  width: 900px;
   margin: 0 auto;
   border: 1px solid #ddd;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 #tabelaDados th, #tabelaDados td {
@@ -36,4 +34,31 @@
 
 #tabelaDados tr.header, #tabelaDados tr:hover {
   background-color: #f1f1f1;
+}
+
+#indexPagination {
+  display: block;
+  margin: 0 auto;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
 }

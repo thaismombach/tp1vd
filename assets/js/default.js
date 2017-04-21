@@ -77,6 +77,7 @@ function searchTable() {
     }
   }
   numPages = Math.ceil(numPages/quantElem);
+  if (latestIdx) latestIdx.html(tableHeader[latestIdx.index()]);
   updateTableBody(_dataContent, 0);
 }
 

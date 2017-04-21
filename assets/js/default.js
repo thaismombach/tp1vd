@@ -1,16 +1,19 @@
 var dataContent;
 var _dataContent;
-var quantElem = 20;
+var quantElem = 10;
 var page = 0;
 var numPages = 0;
 var sortOrder = 1;
 var sortColumn = -1;
 
+var idx;
+var tableHeader;
+
 $(document).ready(function () {
   //load table from a file
   d3.csv("data/dados.csv", function(error, data) {
 
-    var tableHeader = Object.keys(data[0]);  
+    tableHeader = Object.keys(data[0]);
 
     _dataContent = dataContent = data.map(function(d) {
       return Object.keys(d).map(function(k){
@@ -26,7 +29,7 @@ $(document).ready(function () {
       .selectAll('th')
       .data(tableHeader).enter()
       .append("th")
-        .text(function (column) { return column; });
+      .text(function (column) { return column; });
 
     updateTableBody(dataContent, page); 
 
@@ -79,15 +82,18 @@ function searchTable() {
 
 function sortTable() {
   var n = $(this).closest('th').index();
+  idx = $(this).closest('th');
 
   sortOrder = !(sortColumn == n && sortOrder == 1);
   sortColumn = n;
 
   _dataContent = _dataContent.sort(function(a, b) {
     if (sortOrder) {
+      // idx.html(tableHeader[n] + " <i class='fa fa-sort-asc fa-fw' aria-hidden='true'></i>");
       return d3.ascending(a[sortColumn], b[sortColumn]);
     }
     else {
+      // idx.html(tableHeader[n] + " <i class='fa fa-sort-desc fa-fw' aria-hidden='true'></i>");
       return d3.descending(a[sortColumn], b[sortColumn]);
     }
   });
@@ -111,7 +117,7 @@ function updateTableBody(data, p){
     .data(function (d) { return d; })
     .enter()
     .append('td')
-      .text(function (d) { return d; });
+    .text(function (d) { return d; });
 
   document.getElementById('currentPage').innerHTML = 1;
 }

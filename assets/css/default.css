@@ -3,17 +3,18 @@
 }
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  font-family: "Open Sans", sans-serif;
+  padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 #campoBusca {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 400px;
+  font-family: FontAwesome;
+  position: relative;
+  font-size: 16px;
+
+  width: 380px;
   display: block;
   margin: 0 auto;
-  font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
@@ -24,12 +25,25 @@ body {
   width: 900px;
   margin: 0 auto;
   border: 1px solid #ddd;
-  font-size: 17px;
+  font-size: 16px;
+}
+
+#tabelaDados {
+  word-break: normal;
 }
 
 #tabelaDados th, #tabelaDados td {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  width: 200px;
+}
+
+#tabelaDados th {
+  text-align: center;
+}
+
+#tabelaDados td {
   text-align: left;
-  padding: 12px;
 }
 
 #tabelaDados tr {
@@ -73,4 +87,8 @@ body {
 
 .hero-feature {
     margin-bottom: 30px;
+}
+
+#next, #last {
+  font-size: 15px;
 }

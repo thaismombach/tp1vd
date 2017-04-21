@@ -6,7 +6,7 @@ var numPages = 0;
 var sortOrder = 1;
 var sortColumn = -1;
 
-var idx;
+var idx, latestIdx;
 var tableHeader;
 
 $(document).ready(function () {
@@ -89,11 +89,15 @@ function sortTable() {
 
   _dataContent = _dataContent.sort(function(a, b) {
     if (sortOrder) {
-      // idx.html(tableHeader[n] + " <i class='fa fa-sort-asc fa-fw' aria-hidden='true'></i>");
+      if (latestIdx) latestIdx.html(tableHeader[latestIdx.index()]);
+      latestIdx = idx;
+      idx.html(tableHeader[n] + "<i class='fa fa-sort-asc fa-fw' aria-hidden='true'></i>");
       return d3.ascending(a[sortColumn], b[sortColumn]);
     }
     else {
-      // idx.html(tableHeader[n] + " <i class='fa fa-sort-desc fa-fw' aria-hidden='true'></i>");
+      if (latestIdx) latestIdx.html(tableHeader[latestIdx.index()]);
+      latestIdx = idx;
+      idx.html(tableHeader[n] + "<i class='fa fa-sort-desc fa-fw' aria-hidden='true'></i>");
       return d3.descending(a[sortColumn], b[sortColumn]);
     }
   });

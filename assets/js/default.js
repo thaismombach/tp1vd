@@ -44,7 +44,6 @@ $('#next').click(function() {
   page++;
 
   updateTableBody(_dataContent, page);
-
   document.getElementById('currentPage').innerHTML = page+1;
 });
 
@@ -53,7 +52,6 @@ $('#last').click(function() {
   page--;
 
   updateTableBody(_dataContent, page);
-
   document.getElementById('currentPage').innerHTML = page+1;
 });
 

@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
 #campoBusca {
   background-image: url('/css/searchicon.png');
   background-position: 10px 10px;
@@ -53,7 +57,7 @@
 }
 
 .pagination a.active {
-  background-color: #4CAF50;
+  background-color: #2a4cf4;
   color: white;
   border-radius: 5px;
 }
@@ -61,4 +65,12 @@
 .pagination a:hover:not(.active) {
   background-color: #ddd;
   border-radius: 5px;
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
 }
